@@ -461,7 +461,7 @@ body{margin:0;background:var(--s-bg);color:var(--s-ink);font-family:"Plex",syste
 .s-counter{font-family:KaTeX_Main,serif;font-size:15px;color:var(--s-muted);min-width:44px;text-align:center}
 .s-stagewrap{margin-top:22px;border-radius:18px;background:#E9ECF2;padding:26px;overflow-x:auto;overflow-y:hidden;
   box-shadow:inset 0 0 0 1px rgba(18,24,51,.06)}
-.s-frame.is-hidden{display:none}
+.is-hidden{display:none}
 .s-stage{position:relative;margin:0 auto;border-radius:8px;overflow:hidden;background:#fff;
   box-shadow:0 1px 0 rgba(18,24,51,.04),0 2px 8px rgba(18,24,51,.06),0 40px 90px -40px rgba(18,24,51,.5)}
 .s-stage>.sheet,.s-stage>.sheet3{position:absolute;top:0;left:0;transform-origin:0 0}
@@ -558,6 +558,104 @@ body{margin:0;background:var(--s-bg);color:var(--s-ink);font-family:"Plex",syste
 .s-choice .t span{font-size:13.5px;color:var(--s-soft)}
 .s-choice .go{color:var(--s-soft);flex-shrink:0}
 
+/* ---------- exam ---------- */
+.btn-lg{height:56px;padding:0 30px;font-size:16.5px;border-radius:15px}
+.s-exam-cover{max-width:760px;margin:0 auto;background:linear-gradient(180deg,#fff,var(--s-surface));border:1px solid var(--s-line);border-radius:26px;padding:44px 40px;text-align:center;box-shadow:0 24px 60px -40px rgba(18,24,51,.35)}
+.s-exam-letterhead{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:22px}
+.s-exam-letterhead .lh-t{text-align:right;line-height:1.4}
+.s-exam-letterhead .lh-t b{display:block;font-family:"Kufi",sans-serif;font-size:16px}
+.s-exam-letterhead .lh-t span{font-size:12.5px;color:var(--s-soft)}
+.s-exam-cover h3{font-family:"Kufi",sans-serif;font-size:26px;line-height:1.5;margin:0 0 10px}
+.s-exam-sub{color:var(--s-muted);font-size:15.5px;line-height:1.85;max-width:560px;margin:0 auto 26px}
+.s-exam-meta{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:26px}
+.s-exam-meta span{display:inline-flex;align-items:center;gap:8px;background:var(--s-surface);border:1px solid var(--s-line);border-radius:12px;padding:9px 16px;font-size:14px;color:var(--s-muted)}
+.s-exam-meta .s-ico{width:17px;height:17px;color:var(--s-gold-deep)}
+.s-exam-meta b{color:var(--s-ink);font-weight:700}
+.s-exam-rules{text-align:right;max-width:560px;margin:0 auto 30px;display:grid;gap:10px;padding-inline-start:0;list-style:none}
+.s-exam-rules li{position:relative;padding-inline-start:26px;font-size:14.5px;color:var(--s-muted);line-height:1.8}
+.s-exam-rules li::before{content:"";position:absolute;inset-inline-start:0;top:8px;width:7px;height:7px;border-radius:50%;background:var(--s-gold)}
+
+.s-exam-paper{max-width:900px;margin:0 auto}
+.s-exam-bar{position:sticky;top:calc(var(--s-nav) + 10px);z-index:40;display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--s-line);border-radius:16px;padding:12px 18px;margin-bottom:28px;box-shadow:0 10px 30px -22px rgba(18,24,51,.3)}
+.s-exam-bar .prog{flex:1;height:8px;border-radius:6px;background:var(--s-surface);overflow:hidden}
+.s-exam-bar .bar{height:100%;width:0%;background:linear-gradient(90deg,var(--s-indigo),var(--s-indigo-2));border-radius:6px;transition:width .25s}
+.s-exam-bar .stat{font-size:13.5px;color:var(--s-muted);white-space:nowrap}
+.s-exam-bar .stat b{color:var(--s-ink)}
+.s-exam-bar .timer{display:flex;align-items:center;gap:6px;font-family:"Plex";font-weight:700;font-size:15px;color:var(--s-gold-deep);white-space:nowrap}
+.s-exam-bar .timer .s-ico{width:17px;height:17px}
+.s-exam-bar .timer.low{color:#A0342A}
+
+.s-exam-section-h{margin:34px 0 16px}
+.s-exam-section-h:first-child{margin-top:0}
+.s-exam-section-h h4{font-family:"Kufi",sans-serif;font-size:19px;margin:0 0 4px}
+.s-exam-section-h p{color:var(--s-soft);font-size:13.5px;margin:0}
+
+.s-exam-q{background:#fff;border:1px solid var(--s-line);border-radius:18px;padding:22px 24px;margin-bottom:16px}
+.s-exam-q .qh{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:6px}
+.s-exam-q .qh .qn{font-family:"Kufi",sans-serif;font-weight:600;font-size:16.5px;line-height:1.7}
+.s-exam-q .qh .qm{flex-shrink:0;font-size:12.5px;color:var(--s-gold-deep);background:var(--gold-soft,#FBF4E2);border-radius:8px;padding:3px 10px;white-space:nowrap}
+.s-exam-q .qtopic{display:inline-block;font-size:11.5px;color:var(--s-indigo);background:rgba(46,42,150,.08);border-radius:7px;padding:2px 8px;margin-bottom:12px}
+.s-exam-q .qprompt{font-size:16px;line-height:1.9;margin:0 0 16px;color:var(--s-ink)}
+.btn-on-dark{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+.btn-on-dark:hover{background:rgba(255,255,255,.14);border-color:#fff}
+.mx{font-family:"Cambria Math","EB Garamond",Georgia,serif;font-style:normal;unicode-bidi:isolate}
+
+.s-exam-opts{display:grid;gap:10px}
+.s-exam-opt{display:flex;align-items:flex-start;gap:12px;border:1.5px solid var(--s-line);border-radius:13px;padding:12px 16px;cursor:pointer;transition:border-color .16s,background .16s}
+.s-exam-opt:hover{border-color:rgba(46,42,150,.35)}
+.s-exam-opt input{accent-color:var(--s-indigo);width:18px;height:18px;flex-shrink:0;margin-top:2px}
+.s-exam-opt span{font-size:15px;line-height:1.7}
+.s-exam-opt.checked{border-color:var(--s-indigo-2);background:rgba(46,42,150,.05)}
+
+.s-exam-tf{display:flex;gap:12px;margin-bottom:16px}
+.s-exam-tf button{flex:1;height:48px;border-radius:12px;border:1.5px solid var(--s-line);background:#fff;font-family:"Plex";font-weight:700;font-size:15px;color:var(--s-muted);cursor:pointer;transition:border-color .16s,color .16s,background .16s}
+.s-exam-tf button.sel-true.is-sel{border-color:var(--s-teal);color:var(--s-teal);background:rgba(11,107,97,.07)}
+.s-exam-tf button.sel-false.is-sel{border-color:#A0342A;color:#A0342A;background:rgba(160,52,42,.07)}
+.s-exam-reason{display:none;margin-top:6px}
+.s-exam-reason.show{display:block}
+.s-exam-reason label{display:block;font-size:13px;font-weight:600;color:var(--s-muted);margin-bottom:8px}
+
+.s-exam-fill{font-size:15.5px;line-height:2.4;color:var(--s-ink)}
+.s-exam-fill select{display:inline-block;width:auto;height:auto;min-width:170px;margin:0 4px;font-family:"Plex";font-weight:700;color:var(--s-indigo);border:none;border-bottom:2px solid var(--s-gold);background:var(--gold-soft,#FBF4E2);border-radius:8px 8px 0 0;padding:4px 10px}
+
+.s-exam-submit{max-width:900px;margin:8px auto 0;text-align:center}
+.s-exam-submit .s-note{margin:0 0 14px}
+
+.s-exam-result{max-width:900px;margin:0 auto}
+.s-exam-score{display:flex;align-items:center;gap:28px;flex-wrap:wrap;background:linear-gradient(135deg,#1E1A6B 0%,#2E2A96 55%,#3B36B5 100%);border-radius:24px;padding:34px 36px;color:#fff;margin-bottom:26px}
+.s-exam-score .ring-wrap{position:relative;width:132px;height:132px;flex-shrink:0}
+.s-exam-score .ring-wrap svg{width:100%;height:100%;transform:rotate(-90deg)}
+.s-exam-score .ring-wrap .bg{fill:none;stroke:rgba(255,255,255,.18);stroke-width:10}
+.s-exam-score .ring-wrap .fg{fill:none;stroke:#E3C46C;stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset 1s ease}
+.s-exam-score .ring-wrap .num{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.s-exam-score .ring-wrap .num b{font-family:"Kufi",sans-serif;font-size:28px;line-height:1}
+.s-exam-score .ring-wrap .num span{font-size:12px;color:rgba(255,255,255,.75)}
+.s-exam-score .info{flex:1;min-width:200px}
+.s-exam-score .info h3{font-family:"Kufi",sans-serif;font-size:23px;margin:0 0 6px}
+.s-exam-score .info p{margin:0;color:rgba(255,255,255,.78);font-size:14.5px;line-height:1.8}
+.s-exam-score .acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+
+.s-exam-topics{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:28px}
+.s-exam-topic{background:#fff;border:1px solid var(--s-line);border-radius:15px;padding:16px 18px}
+.s-exam-topic .tt{display:flex;justify-content:space-between;font-size:13.5px;font-weight:600;margin-bottom:8px}
+.s-exam-topic .tt em{font-style:normal;color:var(--s-soft)}
+.s-exam-topic .tbar{height:7px;border-radius:5px;background:var(--s-surface);overflow:hidden}
+.s-exam-topic .tbar i{display:block;height:100%;background:linear-gradient(90deg,var(--s-teal),#12a394);border-radius:5px}
+
+.s-exam-review-h{font-family:"Kufi",sans-serif;font-size:19px;margin:0 0 16px}
+.s-exam-review-item{border:1.5px solid var(--s-line);border-radius:16px;padding:18px 20px;margin-bottom:14px;border-inline-start-width:5px}
+.s-exam-review-item.ok{border-inline-start-color:var(--s-teal)}
+.s-exam-review-item.bad{border-inline-start-color:#A0342A}
+.s-exam-review-item .rh{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.s-exam-review-item .rh .badge{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;border-radius:8px;padding:3px 9px}
+.s-exam-review-item.ok .badge{color:var(--s-teal);background:rgba(11,107,97,.1)}
+.s-exam-review-item.bad .badge{color:#A0342A;background:rgba(160,52,42,.1)}
+.s-exam-review-item .rq{font-size:15px;line-height:1.8;margin-bottom:10px}
+.s-exam-review-item .ryour{font-size:14px;color:var(--s-muted);margin-bottom:6px}
+.s-exam-review-item .rcorrect{font-size:14px;color:var(--s-teal);margin-bottom:6px}
+.s-exam-explain{background:var(--s-surface);border-radius:12px;padding:12px 15px;font-size:14px;color:var(--s-muted);line-height:1.85;margin-top:8px}
+.s-exam-explain b{color:var(--s-ink)}
+
 /* toast + back-to-top */
 .s-toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);opacity:0;z-index:150;background:var(--s-ink);color:#fff;padding:12px 18px;border-radius:12px;
   font-size:15px;display:flex;align-items:center;gap:10px;box-shadow:0 20px 40px -18px rgba(18,24,51,.7);transition:opacity .2s,transform .2s;pointer-events:none}
@@ -615,6 +713,13 @@ body{margin:0;background:var(--s-bg);color:var(--s-ink);font-family:"Plex",syste
   .s-stagewrap{padding:10px}
   .s-band{padding:30px 22px;border-radius:0}
   .s-footer .grid{grid-template-columns:1fr}
+  .s-exam-cover{padding:32px 22px;border-radius:20px}
+  .s-exam-bar{flex-wrap:wrap;gap:10px}
+  .s-exam-bar .prog{order:3;flex-basis:100%}
+  .s-exam-tf{flex-direction:column}
+  .s-exam-score{padding:26px 22px;text-align:center;justify-content:center}
+  .s-exam-score .info{text-align:center}
+  .s-exam-score .acts{justify-content:center}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 
@@ -630,6 +735,7 @@ body{margin:0;background:var(--s-bg);color:var(--s-ink);font-family:"Plex",syste
   .s-stage>.sheet,.s-stage>.sheet3{position:relative;transform:none!important}
   .sheet *,.sheet3 *{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  #exam{display:none!important}
 }
 
 </style>
@@ -649,6 +755,7 @@ body{margin:0;background:var(--s-bg);color:var(--s-ink);font-family:"Plex",syste
       <a href="#posters" data-nav="posters">اللوحات</a>
       <a href="#glossary" data-nav="glossary">المصطلحات</a>
       <a href="#refs" data-nav="refs">المراجع</a>
+      <a href="#exam" data-nav="exam">الامتحان</a>
     </nav>
     <div class="s-nav-actions">
       <button class="btn btn-ghost btn-sm hide-md" type="button" data-open="m-about"><svg class="s-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 16.5v-5M12 7.8h.01"/></svg><span>عن المنصة</span></button>
@@ -670,6 +777,7 @@ body{margin:0;background:var(--s-bg);color:var(--s-ink);font-family:"Plex",syste
     <a class="link" href="#posters" data-drawer-close>اللوحات</a>
     <a class="link" href="#glossary" data-drawer-close>المصطلحات</a>
     <a class="link" href="#refs" data-drawer-close>المراجع</a>
+    <a class="link" href="#exam" data-drawer-close>الامتحان</a>
     <div style="height:10px"></div>
     <button class="btn btn-outline btn-block" type="button" data-open="m-about" data-drawer-close><svg class="s-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 16.5v-5M12 7.8h.01"/></svg><span>عن المنصة</span></button>
     <button class="btn btn-outline btn-block" type="button" data-open="m-contact" data-drawer-close><svg class="s-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg><span>اتصل بنا</span></button>
@@ -1206,6 +1314,58 @@ c100.7 8.3 195.3 44 280 108 55.3 42 101.7 93 139 153l9 14c2.7-4 5.7-8.7 9-14
   </div>
 </section>
 
+<!-- ================= EXAM ================= -->
+<section class="s-section" id="exam" data-section="exam">
+  <div class="s-wrap">
+    <div class="s-head">
+      <div>
+        <h2>الامتحان الشامل</h2>
+        <p>اختبر فهمك لجميع المفاهيم الواردة في اللوحات الثلاث، وتعرّف فوراً على درجتك وسبب كل إجابة.</p>
+      </div>
+      <span class="en">Comprehensive Exam</span>
+    </div>
+
+    <div class="s-exam-cover" id="exam-cover">
+      <div class="s-exam-letterhead">
+        <span class="mini-seal" aria-hidden="true"><div class="seal"><span class="ticks"></span><span class="ring"></span><span class="disk"><span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.6833em;"></span><span class="mord mathcal" style="margin-right: 0.0278em;">D</span></span></span></span></span></span></div></span>
+        <div class="lh-t">
+          <b>Algebra with Dani</b>
+          <span>منصة لوحات أكاديمية في الجبر المجرد</span>
+        </div>
+      </div>
+      <h3>امتحانٌ تقييميٌّ شامل — الجبر المجرد</h3>
+      <p class="s-exam-sub">يغطي هذا الامتحان اللوحات الثلاث: الزمرة والحلقة، والمثالي والحلقة الجزئية، والفضاء الشعاعي والمودول، على غرار امتحانات مقرّرات الجبر المجرد في كليات العلوم.</p>
+      <div class="s-exam-meta">
+        <span><svg class="s-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.5l3.5 2"/></svg>الزمن المخصّص: <b>40</b> دقيقة</span>
+        <span><svg class="s-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 9 4.5-9 4.5-9-4.5z"/><path d="m3 12 9 4.5 9-4.5"/><path d="m3 16.5 9 4.5 9-4.5"/></svg>العلامة العظمى: <b>30</b></span>
+        <span><svg class="s-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11.5 11 13.5 15.5 9"/><circle cx="12" cy="12" r="9.5"/></svg>عدد الأسئلة: <b id="exam-qcount">20</b></span>
+      </div>
+      <ul class="s-exam-rules">
+        <li>ثلاثة أقسام: اختيار من متعدد، صح أو خطأ مع التعليل، وإكمال الفراغ.</li>
+        <li>يُصحَّح الامتحان تلقائياً فور التسليم، مع بيان سبب كل إجابة صحيحة وتوضيح مصدر الخطأ عند وقوعه.</li>
+        <li>يبدأ العدّاد التنازلي فور الضغط على «ابدأ الامتحان»، وتُسلَّم الورقة تلقائياً عند انتهاء الوقت.</li>
+        <li>يمكنك إعادة المحاولة بعدد غير محدود من المرات لتثبيت المفاهيم.</li>
+      </ul>
+      <button class="btn btn-gold btn-lg" type="button" id="exam-start"><svg class="s-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 6 10 6-10 6z"/></svg><span>ابدأ الامتحان</span></button>
+    </div>
+
+    <form class="s-exam-paper is-hidden" id="exam-paper" novalidate>
+      <div class="s-exam-bar">
+        <div class="prog" aria-hidden="true"><div class="bar" id="exam-progress-bar"></div></div>
+        <div class="stat"><b id="exam-answered">0</b> / <span id="exam-total">20</span> مُجاب</div>
+        <div class="timer" id="exam-timer"><svg class="s-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.5l3.5 2"/></svg><span id="exam-time">40:00</span></div>
+      </div>
+      <div id="exam-sections"></div>
+      <div class="s-exam-submit">
+        <p class="s-note" id="exam-warn"></p>
+        <button class="btn btn-primary btn-lg" type="submit" id="exam-submit"><svg class="s-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11.5 11 13.5 15.5 9"/><circle cx="12" cy="12" r="9.5"/></svg><span>تسليم الامتحان</span></button>
+      </div>
+    </form>
+
+    <div class="s-exam-result is-hidden" id="exam-result"></div>
+  </div>
+</section>
+
 <!-- ================= TELEGRAM BAND ================= -->
 <section style="padding:70px 0 0" id="telegram" data-section="telegram">
   <div class="s-wrap">
@@ -1248,7 +1408,7 @@ c100.7 8.3 195.3 44 280 108 55.3 42 101.7 93 139 153l9 14c2.7-4 5.7-8.7 9-14
       </div>
       <div>
         <h4>الأقسام</h4>
-        <ul><li><a href="#home">الرئيسية</a></li><li><a href="#posters">اللوحات</a></li><li><a href="#glossary">المصطلحات</a></li><li><a href="#refs">المراجع</a></li></ul>
+        <ul><li><a href="#home">الرئيسية</a></li><li><a href="#posters">اللوحات</a></li><li><a href="#glossary">المصطلحات</a></li><li><a href="#refs">المراجع</a></li><li><a href="#exam">الامتحان</a></li></ul>
       </div>
       <div>
         <h4>المنصة</h4>
@@ -2605,6 +2765,242 @@ var SITE_CONTACT = { email: "jonmcdonald975@gmail.com", whatsapp: "", telegram: 
     $("#gloss").innerHTML = out || '<div class="s-empty">لا توجد نتائج مطابقة. جرّب كلمة أخرى بالعربية أو الإنجليزية.</div>';
   }
 
+  /* ---------- exam ---------- */
+  var EXAM = [
+    { title: "القسم الأول — اختيار من متعدد", note: "اختر الإجابة الصحيحة لكل فقرة (علامة واحدة لكل فقرة):", marks: 1, type: "mcq", qs: [
+      { topic: "group-ring", q: 'أيّ الشروط التالية <b>غير</b> مطلوب في تعريف الحلقة <span class="mx" dir="ltr">(R,+,·)</span>؟', opts: ['أن تكون <span class="mx" dir="ltr">(R,+)</span> زمرة إبدالية', "أن يكون الضرب تجميعياً", "أن يتحقق قانونا التوزيع من الجهتين", 'أن يوجد للضرب عنصر محايد <span class="mx" dir="ltr">1</span>'], correct: 3, explain: "لا يُشترط في تعريف الحلقة وجود محايد ضربي، ولا نظير ضربي، ولا إبدالية الضرب — وهو الاصطلاح المعتمد في هذه المنصة (Gallian؛ Dummit &amp; Foote)." },
+      { topic: "group-ring", q: 'البنية <span class="mx" dir="ltr">(S₃,∘)</span> هي:', opts: ["زمرة إبدالية", "زمرة غير إبدالية", "حلقة", "ليست زمرة"], correct: 1, explain: 'زمرة تبديلات ثلاثة عناصر <span class="mx" dir="ltr">S₃</span> مثال قياسي على زمرة غير إبدالية؛ والإبدالية ليست شرطاً في تعريف الزمرة.' },
+      { topic: "group-ring", q: 'لماذا لا تُشكّل البنية <span class="mx" dir="ltr">(ℤ∖{0},·)</span> زمرة؟', opts: ["لأن الضرب غير تجميعي", "لأنها لا تحوي عنصراً محايداً", 'لأن بعض العناصر لا تملك نظيراً ضربياً في <span class="mx" dir="ltr">ℤ</span>', "لأن الضرب غير مغلق"], correct: 2, explain: 'العدد <span class="mx" dir="ltr">2</span> مثلاً لا يوجد له نظير ضربي في <span class="mx" dir="ltr">ℤ</span> (لا يوجد <span class="mx" dir="ltr">x∈ℤ</span> يحقق <span class="mx" dir="ltr">2x=1</span>)، فتفشل مسلّمة النظير رغم تحقّق البقية.' },
+      { topic: "ideal-subring", q: 'المجموعة <span class="mx" dir="ltr">ℤ</span> بالنسبة إلى الحلقة <span class="mx" dir="ltr">ℚ</span> هي:', opts: ["حلقة جزئية فقط", "مثالي فقط", "حلقة جزئية ومثالي معاً", "ليست حلقة جزئية ولا مثالياً"], correct: 0, explain: '<span class="mx" dir="ltr">ℤ≤ℚ</span> لأنها مغلقة على الطرح والضرب، لكنها ليست مثالياً لأن <span class="mx" dir="ltr">(1/2)∈ℚ</span> و<span class="mx" dir="ltr">1∈ℤ</span> و<span class="mx" dir="ltr">(1/2)·1=1/2∉ℤ</span>، فيفشل شرط الامتصاص.' },
+      { topic: "ideal-subring", q: "الفرق الجوهري بين المثالي والحلقة الجزئية هو:", opts: ["المثالي يتطلب الانغلاق على الجمع فقط", "الحلقة الجزئية تتطلب امتصاص الضرب من الحلقة الكبرى", "المثالي يتطلب امتصاص الضرب من الحلقة كلها من الجهتين", "لا يوجد فرق جوهري بينهما"], correct: 2, explain: 'الحلقة الجزئية تكتفي بانغلاق داخلي <span class="mx" dir="ltr">S·S⊆S</span>، بينما المثالي يشترط شرطاً أقوى هو الامتصاص <span class="mx" dir="ltr">R·I⊆I</span> و<span class="mx" dir="ltr">I·R⊆I</span>.' },
+      { topic: "ideal-subring", q: 'إذا كان <span class="mx" dir="ltr">φ:R→R′</span> تشاكل حلقات، فإن نواته <span class="mx" dir="ltr">ker φ</span> تكون:', opts: ["حلقة جزئية من R فقط", "مثالياً في R", "مثالياً في R′", "حلقة جزئية من R′"], correct: 1, explain: 'نواة تشاكل الحلقات دائماً مثالي في حلقة المصدر <span class="mx" dir="ltr">R</span>، تماماً كما أن نواة تشاكل الزمر زمرة جزئية ناظمية.' },
+      { topic: "vector-module", q: "الفرق الجوهري بين الفضاء الشعاعي والمودول هو طبيعة:", opts: ["عملية الجمع الداخلية", "المعاملات (Scalars): حقل مقابل حلقة", "عنصر المحايد الجمعي", "خاصية التوزيع"], correct: 1, explain: 'في الفضاء الشعاعي تُؤخذ المعاملات من حقل <span class="mx" dir="ltr">F</span> (لكل عنصر غير صفري نظير ضربي)، بينما في المودول تُؤخذ من حلقة <span class="mx" dir="ltr">R</span> ذات محايد لا يُشترط فيها النظير الضربي ولا الإبدالية.' },
+      { topic: "vector-module", q: 'أيّ العبارات التالية صحيحة عن <span class="mx" dir="ltr">ℤ₆</span> بوصفها <span class="mx" dir="ltr">ℤ</span>-مودولاً؟', opts: ["لا فتل فيها لأنها منتهية", 'حاصل ضرب <span class="mx" dir="ltr">3·[2]=[0]</span> مع أنّ <span class="mx" dir="ltr">3≠0</span> و<span class="mx" dir="ltr">[2]≠[0]</span>، أي أن فيها فتلاً', "لها أساس بالضرورة كأي فضاء شعاعي", "هي فضاء شعاعي فوق ℤ"], correct: 1, explain: '<span class="mx" dir="ltr">3·[2]=[0]</span> في <span class="mx" dir="ltr">ℤ₆</span> مثال قياسي على الفتل (Torsion)، وهي ظاهرة لا يمكن أن تحدث في فضاء شعاعي لأن وجود النظير الضربي في الحقل يمنعها.' },
+      { topic: "vector-module", q: "أيّ مما يلي مضمون الوجود في كل فضاء شعاعي، لكنه غير مضمون في كل مودول؟", opts: ["عنصر محايد جمعي", "أساس (Basis)", "عملية جمع داخلية", "عنصر معاكس جمعي"], correct: 1, explain: 'كل فضاء شعاعي له أساس، بينما بعض المودولات — مثل <span class="mx" dir="ltr">ℤₙ</span> فوق <span class="mx" dir="ltr">ℤ</span> حيث <span class="mx" dir="ltr">n≥2</span> — لا يوجد لها أساس.' },
+      { topic: "group-ring", q: "وفق سلّم البنى (زمرة ← زمرة إبدالية ← حلقة ← حلقة إبدالية ذات محايد ← منطقة صحيحة ← حقل)، ما الذي يُضاف عند الانتقال من «المنطقة الصحيحة» إلى «الحقل»؟", opts: ["عدم وجود قواسم للصفر", "وجود نظير ضربي لكل عنصر غير صفري", "إبدالية الضرب", 'وجود محايد ضربي <span class="mx" dir="ltr">1≠0</span>'], correct: 1, explain: 'المنطقة الصحيحة حلقة إبدالية ذات محايد <span class="mx" dir="ltr">1≠0</span> بلا قواسم صفر؛ ولتصبح حقلاً يُضاف شرط أن لكل عنصر غير صفري نظيراً ضربياً.' }
+    ]},
+    { title: "القسم الثاني — صح أو خطأ مع التعليل", note: "حدّد صحة كل عبارة، ثم اختر التعليل الصحيح (علامة للحكم، وعلامة للتعليل):", marks: 2, type: "tf", qs: [
+      { topic: "ideal-subring", q: "كل حلقة جزئية هي مثالي.", correct: false, reasons: [
+          "صحيح لأن كليهما يشترط الانغلاق على الطرح والضرب فقط",
+          "خطأ، لأن المثالي يشترط امتصاص الضرب من الحلقة كلها من الجهتين، وهو أقوى من انغلاق الحلقة الجزئية على ضرب عناصرها فقط",
+          "خطأ، لأن الحلقة الجزئية تشترط وجود محايد ضربي والمثالي لا يشترط ذلك",
+          "صحيح دائماً في الحلقات الإبدالية فقط"
+        ], reasonCorrect: 1, explain: 'المثال المضاد <span class="mx" dir="ltr">ℤ≤ℚ</span> يوضح ذلك: <span class="mx" dir="ltr">ℤ</span> حلقة جزئية من <span class="mx" dir="ltr">ℚ</span>، لكنها ليست مثالياً لأن <span class="mx" dir="ltr">(1/2)·1=1/2∉ℤ</span>.' },
+      { topic: "group-ring", q: "كل زمرة هي حلقة.", correct: false, reasons: [
+          "صحيح لأن كل زمرة تحقق مسلّمات التوزيع تلقائياً",
+          "خطأ، لأن الحلقة تحتاج عملية ضرب ثانية تجميعية موزّعة على الجمع، والزمرة تحوي عملية واحدة فقط",
+          "خطأ لأن الزمرة يجب أن تكون منتهية والحلقة لا يُشترط فيها ذلك",
+          "صحيح إذا كانت الزمرة إبدالية فقط"
+        ], reasonCorrect: 1, explain: "تعريف الحلقة يتطلّب بنية إضافية (عملية ضرب ثانية تجميعية وموزّعة على الجمع من الجهتين)، وليست كل زمرة مزوَّدة بهذه البنية." },
+      { topic: "vector-module", q: "كل فضاء شعاعي هو مودول، لكن العكس غير صحيح دائماً.", correct: true, reasons: [
+          "صحيح، لأن الفضاء الشعاعي تماماً مودول فوق حقل، والمودول قد يكون فوق حلقة عامة لا تحقق شروط الحقل",
+          "خطأ، لأن المودول يشترط شروطاً أقوى من الفضاء الشعاعي",
+          "صحيح فقط في الأبعاد المنتهية",
+          "خطأ، فكلاهما مفهوم واحد بأسماء مختلفة"
+        ], reasonCorrect: 0, explain: 'الفضاء الشعاعي حالة خاصة من المودول عندما تكون حلقة المعاملات حقلاً؛ فكل خاصية عامة عن المودولات تصح في الفضاءات الشعاعية، لا العكس — كما في ظاهرة الفتل في <span class="mx" dir="ltr">ℤ₆</span>.' },
+      { topic: "group-ring", q: "الضرب في حلقة عامة يُشكّل بالضرورة زمرة.", correct: false, reasons: [
+          "صحيح لأن الضرب تجميعي دائماً في الحلقة",
+          'خطأ، لأن الضرب في الحلقة لا يُشترط أن يحوي محايداً أو نظائر لعناصره، فمثلاً <span class="mx" dir="ltr">(ℤ,·)</span> ليست زمرة',
+          "خطأ لأن الضرب يجب أن يكون إبدالياً أولاً",
+          "صحيح إذا استبعدنا الصفر من الحلقة فقط"
+        ], reasonCorrect: 1, explain: 'يُشترط في الضرب فقط الانغلاق والتجميع والتوزيع على الجمع؛ أما محايد الضرب ونظائره فليسا مضمونين، فـ <span class="mx" dir="ltr">(ℤ,·)</span> مثلاً ليست زمرة لغياب النظائر الضربية لمعظم عناصرها.' },
+      { topic: "ideal-subring", q: 'إذا احتوى مثالي <span class="mx" dir="ltr">I</span> في حلقة <span class="mx" dir="ltr">R</span> على المحايد الضربي <span class="mx" dir="ltr">1</span>، فإن <span class="mx" dir="ltr">I=R</span>.', correct: true, reasons: [
+          'صحيح، لأن امتصاص المثالي يعطي <span class="mx" dir="ltr">r·1∈I</span> لكل <span class="mx" dir="ltr">r∈R</span>، أي أن كل عنصر من R موجود في I',
+          "خطأ، فقد يبقى I مثالياً حقيقياً حتى لو احتوى 1",
+          "صحيح فقط إذا كانت R حقلاً",
+          "خطأ لأن المحايد الضربي غير معرَّف في المثاليات"
+        ], reasonCorrect: 0, explain: 'بما أن <span class="mx" dir="ltr">I</span> مثالي، يتحقق <span class="mx" dir="ltr">r·1∈I</span> لكل <span class="mx" dir="ltr">r∈R</span> (خاصية الامتصاص)، وبما أن <span class="mx" dir="ltr">r·1=r</span> فإن كل عنصر من <span class="mx" dir="ltr">R</span> ينتمي إلى <span class="mx" dir="ltr">I</span>. هذا يخالف الحلقة الجزئية، حيث احتواء <span class="mx" dir="ltr">1</span> لا يستلزم مساواتها للحلقة كلها.' }
+    ]},
+    { title: "القسم الثالث — أكمل الفراغ", note: "اختر الكلمة أو الرمز المناسب لإكمال كل عبارة (علامتان لكل فقرة):", marks: 2, type: "fill", qs: [
+      { topic: "group-ring", pre: 'في تعريف الحلقة <span class="mx" dir="ltr">(R,+,·)</span>، يجب أن تكون <span class="mx" dir="ltr">(R,+)</span>', post: "", opts: ["زمرة إبدالية", "زمرة غير إبدالية", "مجموعة فقط", "حقلاً"], correct: 0, explain: "الجمع في الحلقة يُشكّل دائماً زمرة إبدالية؛ هذا جزء أساسي من التعريف." },
+      { topic: "ideal-subring", pre: 'شرط الامتصاص في تعريف المثالي هو <span class="mx" dir="ltr">R·I⊆I</span> و', post: "", opts: ['<span class="mx" dir="ltr">I·R⊆I</span>', '<span class="mx" dir="ltr">I·I⊆R</span>', '<span class="mx" dir="ltr">S·S⊆S</span>', '<span class="mx" dir="ltr">R·R⊆I</span>'], correct: 0, explain: 'خاصية الامتصاص تشترط الاتجاهين معاً: من اليسار <span class="mx" dir="ltr">R·I⊆I</span> ومن اليمين <span class="mx" dir="ltr">I·R⊆I</span>.' },
+      { topic: "vector-module", pre: 'في المودول تُؤخذ المعاملات من حلقة <span class="mx" dir="ltr">R</span> ذات محايد، بينما في الفضاء الشعاعي تُؤخذ من', post: "", opts: ['حقل <span class="mx" dir="ltr">F</span>', 'زمرة <span class="mx" dir="ltr">G</span>', 'مثالي <span class="mx" dir="ltr">I</span>', 'حلقة جزئية <span class="mx" dir="ltr">S</span>'], correct: 0, explain: "هذا هو جوهر الفرق بين البنيتين؛ فالفضاء الشعاعي حالة خاصة يكون فيها حلقة المعاملات حقلاً." },
+      { topic: "vector-module", pre: "الظاهرة التي تحدث في بعض المودولات ولا يمكن أن تحدث في أي فضاء شعاعي تُسمّى", post: "", opts: ["الفتل (Torsion)", "الأساس", "البعد", "الرتبة"], correct: 0, explain: "الفتل ينتج من غياب النظير الضربي في حلقة المعاملات؛ ووجود النظير في الحقل يمنع حدوثه في الفضاءات الشعاعية." },
+      { topic: "ideal-subring", pre: 'نواة تشاكل الحلقات <span class="mx" dir="ltr">ker φ</span> تكون دائماً', post: "في الحلقة R.", opts: ["مثالياً", "حلقة جزئية فقط", "زمرة جزئية فقط", "حقلاً"], correct: 0, explain: "نواة أي تشاكل حلقات هي مثالي في حلقة المصدر، تماماً كما أن نواة تشاكل الزمر زمرة جزئية ناظمية." }
+    ]}
+  ];
+  var EXAM_DURATION = 40 * 60;
+  var examState = { remaining: EXAM_DURATION, timer: null, confirmSubmit: false };
+
+  function examQid(si, qi) { return "s" + si + "q" + qi; }
+  function marksLabel(n) { return n + (n === 1 ? " علامة" : " علامتان"); }
+
+  function buildExam() {
+    var host = $("#exam-sections"), html = "", qnum = 0;
+    EXAM.forEach(function (sec, si) {
+      html += '<div class="s-exam-section-h"><h4>' + sec.title + "</h4><p>" + sec.note + "</p></div>";
+      sec.qs.forEach(function (q, qi) {
+        qnum++;
+        var id = examQid(si, qi), topicTitle = POSTERS[indexOf(q.topic)].title;
+        html += '<div class="s-exam-q" data-qid="' + id + '"><div class="qtopic">' + topicTitle + '</div>' +
+          '<div class="qh"><span class="qn">السؤال ' + qnum + "</span><span class=\"qm\">" + marksLabel(sec.marks) + "</span></div>";
+        if (sec.type === "fill") {
+          html += '<div class="s-exam-fill">' + q.pre + ' <select data-fill="' + id + '"><option value="">— اختر —</option>';
+          q.opts.forEach(function (opt, oi) { html += '<option value="' + oi + '">' + opt.replace(/<[^>]+>/g, "") + "</option>"; });
+          html += "</select> " + q.post + "</div>";
+        } else {
+          html += '<p class="qprompt">' + q.q + "</p>";
+          if (sec.type === "mcq") {
+            html += '<div class="s-exam-opts">';
+            q.opts.forEach(function (opt, oi) { html += '<label class="s-exam-opt"><input type="radio" name="' + id + '" value="' + oi + '"><span>' + opt + "</span></label>"; });
+            html += "</div>";
+          } else if (sec.type === "tf") {
+            html += '<div class="s-exam-tf"><button type="button" class="sel-true" data-val="true">صحيح</button><button type="button" class="sel-false" data-val="false">خطأ</button></div>' +
+              '<div class="s-exam-reason"><label>علّل إجابتك:</label><div class="s-exam-opts">';
+            q.reasons.forEach(function (r, ri) { html += '<label class="s-exam-opt"><input type="radio" name="' + id + '-r" value="' + ri + '"><span>' + r + "</span></label>"; });
+            html += "</div></div>";
+          }
+        }
+        html += "</div>";
+      });
+    });
+    host.innerHTML = html;
+    $("#exam-qcount").textContent = qnum;
+    $("#exam-total").textContent = qnum;
+
+    $$(".s-exam-opt input[type=radio]").forEach(function (inp) {
+      inp.addEventListener("change", function () {
+        var group = this.closest(".s-exam-opts");
+        $$(".s-exam-opt", group).forEach(function (l) { l.classList.remove("checked"); });
+        this.closest(".s-exam-opt").classList.add("checked");
+        onAnswerChange();
+      });
+    });
+    $$(".s-exam-tf").forEach(function (tf) {
+      var reasonBox = tf.closest(".s-exam-q").querySelector(".s-exam-reason");
+      tf.querySelectorAll("button").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          tf.querySelectorAll("button").forEach(function (b) { b.classList.remove("is-sel"); });
+          btn.classList.add("is-sel");
+          if (reasonBox) reasonBox.classList.add("show");
+          onAnswerChange();
+        });
+      });
+    });
+    $$("[data-fill]").forEach(function (sel) { sel.addEventListener("change", onAnswerChange); });
+  }
+
+  function countAnswered() {
+    var n = 0;
+    EXAM.forEach(function (sec, si) {
+      sec.qs.forEach(function (q, qi) {
+        var id = examQid(si, qi), card = document.querySelector('[data-qid="' + id + '"]');
+        if (!card) return;
+        if (sec.type === "mcq") { if (card.querySelector('input[name="' + id + '"]:checked')) n++; }
+        else if (sec.type === "tf") { if (card.querySelector(".s-exam-tf button.is-sel") && card.querySelector('input[name="' + id + '-r"]:checked')) n++; }
+        else if (sec.type === "fill") { var s = card.querySelector('[data-fill="' + id + '"]'); if (s && s.value !== "") n++; }
+      });
+    });
+    return n;
+  }
+  function onAnswerChange() {
+    examState.confirmSubmit = false;
+    $("#exam-warn").textContent = "";
+    var answered = countAnswered(), total = parseInt($("#exam-total").textContent, 10) || 1;
+    $("#exam-answered").textContent = answered;
+    $("#exam-progress-bar").style.width = (answered / total * 100) + "%";
+  }
+  function formatTime(s) {
+    s = Math.max(0, s);
+    var m = Math.floor(s / 60), sec = s % 60;
+    return (m < 10 ? "0" : "") + m + ":" + (sec < 10 ? "0" : "") + sec;
+  }
+  function tickTimer() {
+    examState.remaining--;
+    $("#exam-time").textContent = formatTime(examState.remaining);
+    $("#exam-timer").classList.toggle("low", examState.remaining <= 300);
+    if (examState.remaining <= 0) { clearInterval(examState.timer); gradeExam(); }
+  }
+  function startExam() {
+    $("#exam-cover").classList.add("is-hidden");
+    $("#exam-result").classList.add("is-hidden");
+    $("#exam-paper").classList.remove("is-hidden");
+    examState.remaining = EXAM_DURATION;
+    $("#exam-timer").classList.remove("low");
+    $("#exam-time").textContent = formatTime(examState.remaining);
+    clearInterval(examState.timer);
+    examState.timer = setInterval(tickTimer, 1000);
+    onAnswerChange();
+    $("#exam-paper").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  function resetExam() {
+    clearInterval(examState.timer);
+    $$(".s-exam-q input[type=radio]").forEach(function (i) { i.checked = false; });
+    $$(".s-exam-opt").forEach(function (l) { l.classList.remove("checked"); });
+    $$(".s-exam-tf button").forEach(function (b) { b.classList.remove("is-sel"); });
+    $$(".s-exam-reason").forEach(function (r) { r.classList.remove("show"); });
+    $$("[data-fill]").forEach(function (s) { s.value = ""; });
+    $("#exam-result").classList.add("is-hidden");
+    $("#exam-paper").classList.add("is-hidden");
+    $("#exam-cover").classList.remove("is-hidden");
+    $("#exam-cover").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  function gradeExam() {
+    clearInterval(examState.timer);
+    var scored = 0, maxScore = 0, qnum = 0, reviewHtml = "";
+    var topicScore = {}, topicMax = {};
+    POSTERS.forEach(function (p) { topicScore[p.id] = 0; topicMax[p.id] = 0; });
+    EXAM.forEach(function (sec, si) {
+      sec.qs.forEach(function (q, qi) {
+        qnum++;
+        var id = examQid(si, qi), card = document.querySelector('[data-qid="' + id + '"]');
+        var mark = sec.marks, got = 0, ok = false, yourText, correctText, qText;
+        if (sec.type === "mcq") {
+          var checked = card.querySelector('input[name="' + id + '"]:checked');
+          var chosen = checked ? parseInt(checked.value, 10) : -1;
+          ok = chosen === q.correct; got = ok ? mark : 0;
+          yourText = chosen >= 0 ? q.opts[chosen] : "لم تُجب";
+          correctText = q.opts[q.correct]; qText = q.q;
+        } else if (sec.type === "tf") {
+          var tfBtn = card.querySelector(".s-exam-tf button.is-sel");
+          var chosenTF = tfBtn ? tfBtn.dataset.val === "true" : null;
+          var rChecked = card.querySelector('input[name="' + id + '-r"]:checked');
+          var chosenR = rChecked ? parseInt(rChecked.value, 10) : -1;
+          var half = mark / 2;
+          if (chosenTF === q.correct) got += half;
+          if (chosenR === q.reasonCorrect) got += half;
+          ok = chosenTF === q.correct && chosenR === q.reasonCorrect;
+          yourText = (chosenTF === null ? "لم تُجب" : (chosenTF ? "صحيح" : "خطأ")) + (chosenR >= 0 ? " — " + q.reasons[chosenR] : "");
+          correctText = (q.correct ? "صحيح" : "خطأ") + " — " + q.reasons[q.reasonCorrect];
+          qText = q.q;
+        } else if (sec.type === "fill") {
+          var s = card.querySelector('[data-fill="' + id + '"]');
+          var chosenF = s && s.value !== "" ? parseInt(s.value, 10) : -1;
+          ok = chosenF === q.correct; got = ok ? mark : 0;
+          yourText = chosenF >= 0 ? q.opts[chosenF] : "لم تُجب";
+          correctText = q.opts[q.correct]; qText = q.pre + " ……… " + q.post;
+        }
+        scored += got; maxScore += mark;
+        topicScore[q.topic] += got; topicMax[q.topic] += mark;
+        reviewHtml += '<div class="s-exam-review-item ' + (ok ? "ok" : "bad") + '">' +
+          '<div class="rh"><span class="badge">' + (ok ? "✓ إجابة صحيحة" : "✗ إجابة غير صحيحة") + '</span><span style="font-size:12.5px;color:var(--s-soft)">' + got + " / " + mark + "</span></div>" +
+          '<div class="rq"><b>السؤال ' + qnum + ".</b> " + qText + "</div>" +
+          '<div class="ryour">إجابتك: ' + yourText + "</div>" +
+          (ok ? "" : '<div class="rcorrect">الإجابة الصحيحة: ' + correctText + "</div>") +
+          '<div class="s-exam-explain"><b>سبب الإجابة: </b>' + q.explain + "</div></div>";
+      });
+    });
+    var pct = maxScore ? scored / maxScore : 0, pctR = Math.round(pct * 100);
+    var remark = pct >= 0.9 ? "ممتاز — تمكّن رائع من المفاهيم!" : pct >= 0.75 ? "جيد جدًا — فهمٌ متين مع بعض الثغرات البسيطة." : pct >= 0.6 ? "جيد — راجع النقاط التي أخطأت فيها." : pct >= 0.5 ? "مقبول — يُستحسن إعادة مراجعة اللوحات." : "بحاجة إلى مراجعة شاملة للمفاهيم الأساسية.";
+    var R = 56, C = 2 * Math.PI * R;
+    var scoreHtml = '<div class="s-exam-score">' +
+      '<div class="ring-wrap"><svg viewBox="0 0 132 132"><circle class="bg" cx="66" cy="66" r="' + R + '"/><circle class="fg" cx="66" cy="66" r="' + R + '" stroke-dasharray="' + C + '" stroke-dashoffset="' + (C * (1 - pct)) + '"/></svg><div class="num"><b>' + scored + "</b><span>من " + maxScore + "</span></div></div>" +
+      '<div class="info"><h3>النتيجة: ' + scored + " / " + maxScore + " (" + pctR + '%)</h3><p>' + remark + '</p>' +
+      '<div class="acts"><button class="btn btn-outline btn-on-dark" type="button" id="exam-retry"><svg class="s-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 4v5h-5"/></svg><span>إعادة المحاولة</span></button></div>' +
+      "</div></div>";
+    var topicsHtml = '<div class="s-exam-topics">';
+    POSTERS.forEach(function (p) {
+      var s = topicScore[p.id], m = topicMax[p.id], pc = m ? (s / m * 100) : 0;
+      topicsHtml += '<div class="s-exam-topic"><div class="tt"><span>' + p.title + "</span><em>" + s + " / " + m + '</em></div><div class="tbar"><i style="width:' + pc + '%"></i></div></div>';
+    });
+    topicsHtml += "</div>";
+    $("#exam-result").innerHTML = scoreHtml + topicsHtml + '<h3 class="s-exam-review-h">مراجعة الإجابات</h3>' + reviewHtml;
+    $("#exam-paper").classList.add("is-hidden");
+    $("#exam-result").classList.remove("is-hidden");
+    var retry = $("#exam-retry"); if (retry) retry.addEventListener("click", resetExam);
+    $("#exam-result").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
   /* ---------- fullscreen ---------- */
   function toggleFS() {
     var v = $("#viewer");
@@ -2653,6 +3049,18 @@ var SITE_CONTACT = { email: "jonmcdonald975@gmail.com", whatsapp: "", telegram: 
   $("#burger").addEventListener("click", openDrawer);
   $("#q").addEventListener("input", function () { renderGloss(this.value); });
   $("#toTop").addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
+  $("#exam-start").addEventListener("click", startExam);
+  $("#exam-paper").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var answered = countAnswered(), total = parseInt($("#exam-total").textContent, 10) || 0;
+    if (answered < total && !examState.confirmSubmit) {
+      examState.confirmSubmit = true;
+      $("#exam-warn").textContent = "لم تُجب على جميع الأسئلة (" + answered + " من " + total + "). اضغط «تسليم الامتحان» مرة أخرى للتسليم كما هو.";
+      return;
+    }
+    examState.confirmSubmit = false;
+    gradeExam();
+  });
 
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") { closeModal(); closeDrawer(); return; }
@@ -2684,7 +3092,7 @@ var SITE_CONTACT = { email: "jonmcdonald975@gmail.com", whatsapp: "", telegram: 
 
   /* init */
   $("#yr").textContent = new Date().getFullYear();
-  renderGloss(""); buildThumbs();
+  renderGloss(""); buildThumbs(); buildExam();
   var start = indexOf(location.hash.slice(1));
   show(start >= 0 ? start : 0, { hash: start >= 0 });
   if (start >= 0) setTimeout(function () { $("#viewer").scrollIntoView({ block: "start" }); }, 60);
