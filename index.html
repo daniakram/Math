@@ -546,18 +546,17 @@ body{margin:0;background:var(--s-bg);color:var(--s-ink);font-family:"Plex",syste
 .s-pdf .t span{font-size:13.5px;color:var(--s-soft)}
 .s-pdf.all{background:linear-gradient(135deg,#FBF4E2,#fff);border-color:rgba(184,145,47,.45)}
 .s-note{font-size:14px;color:var(--s-soft);margin-top:14px;line-height:1.8}
-.s-form{display:grid;gap:14px}
-.s-form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.s-form label{display:block;font-weight:600;font-size:14.5px;margin-bottom:6px;color:var(--s-ink)}
-.s-form .s-input{padding-inline:14px;height:46px}
-.s-form select.s-input{appearance:auto}
-.s-form textarea.s-input{height:auto;min-height:130px;padding:12px 14px;line-height:1.8;resize:vertical}
-.s-channels{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
-.s-mailto{font-size:14.5px;color:var(--s-muted);line-height:1.8}
-.s-mailto a{color:var(--s-indigo);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(46,42,150,.3)}
-.s-mailto a:hover{border-bottom-color:var(--s-indigo)}
-.s-warn{display:none;background:#FFF6E0;border:1px solid rgba(184,145,47,.45);color:#6E520F;border-radius:12px;padding:10px 14px;font-size:14px;line-height:1.8}
-.s-warn.show{display:block}
+.s-choices{display:grid;gap:12px}
+.s-choice{display:flex;align-items:center;gap:14px;border:1px solid var(--s-line);border-radius:16px;padding:16px 18px;text-decoration:none;color:inherit;transition:border-color .18s,box-shadow .18s,transform .18s}
+.s-choice:hover{border-color:rgba(46,42,150,.4);box-shadow:0 10px 22px -16px rgba(18,24,51,.35);transform:translateY(-1px)}
+.s-choice:active{transform:translateY(0)}
+.s-choice .fi{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;flex-shrink:0}
+.s-choice .fi.tg{background:#E7F6FD;color:#229ED9}
+.s-choice .fi.ml{background:#FBF4E2;color:var(--s-gold-deep)}
+.s-choice .t{flex:1;min-width:0}
+.s-choice .t b{display:block;font-family:"Kufi",sans-serif;font-size:16.5px;font-weight:600;line-height:1.5}
+.s-choice .t span{font-size:13.5px;color:var(--s-soft)}
+.s-choice .go{color:var(--s-soft);flex-shrink:0}
 
 /* toast + back-to-top */
 .s-toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);opacity:0;z-index:150;background:var(--s-ink);color:#fff;padding:12px 18px;border-radius:12px;
@@ -607,7 +606,6 @@ body{margin:0;background:var(--s-bg);color:var(--s-ink);font-family:"Plex",syste
   .s-section{padding:56px 0}
   .s-head h2{font-size:27px}
   .s-cards,.s-gloss{grid-template-columns:1fr}
-  .s-form .row{grid-template-columns:1fr}
   .s-toolbar{position:static}
   .s-tabs{width:100%}
   .s-tab{flex:1;justify-content:center;padding:0 8px;font-size:13px}
@@ -1295,36 +1293,20 @@ c100.7 8.3 195.3 44 280 108 55.3 42 101.7 93 139 153l9 14c2.7-4 5.7-8.7 9-14
 <div class="s-modal" id="m-contact" aria-hidden="true">
   <div class="scrim" data-close></div>
   <div class="s-dialog" role="dialog" aria-modal="true" aria-labelledby="m-contact-t">
-    <div class="hd"><span class="ic"><svg class="s-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></span><div><h3 id="m-contact-t">اتصل بنا</h3><div class="sub">سؤال، أو اقتراح لوحة، أو ملاحظة علمية</div></div><button class="icon-btn" type="button" aria-label="إغلاق" data-close><svg class="s-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+    <div class="hd"><span class="ic"><svg class="s-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></span><div><h3 id="m-contact-t">اتصل بنا</h3><div class="sub">اختر وسيلة التواصل التي تفضّلها</div></div><button class="icon-btn" type="button" aria-label="إغلاق" data-close><svg class="s-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
     <div class="bd">
-      <div class="s-form" id="cform">
-        <div class="row">
-          <div><label for="c-name">الاسم</label><input class="s-input" id="c-name" type="text" autocomplete="name"></div>
-          <div><label for="c-mail">بريدك للرد</label><input class="s-input" id="c-mail" type="email" autocomplete="email" dir="ltr"></div>
-        </div>
-        <div class="row">
-          <div><label for="c-subj">الموضوع</label>
-            <select class="s-input" id="c-subj">
-              <option value="question">سؤال عن محتوى لوحة</option>
-              <option value="suggest">اقتراح موضوع لوحة جديدة</option>
-              <option value="bug">الإبلاغ عن خطأ رياضي</option>
-              <option value="teach">تعاون أو استخدام في التدريس</option>
-            </select></div>
-          <div><label for="c-poster">اللوحة المعنية</label>
-            <select class="s-input" id="c-poster">
-              <option value="">عامة</option>
-              <option value="group-ring">الزمرة والحلقة</option>
-              <option value="ideal-subring">المثالي والحلقة الجزئية</option>
-              <option value="vector-module">الفضاء الشعاعي والمودول</option>
-            </select></div>
-        </div>
-        <div><label for="c-msg">الرسالة</label><textarea class="s-input" id="c-msg" rows="5"></textarea></div>
-        <div class="s-warn" id="c-warn"></div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <button class="btn btn-primary" type="button" id="c-send"><svg class="s-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3 10.5 13.5M21 3l-6.5 18-4-7.5-7.5-4z"/></svg><span>إرسال الرسالة</span></button>
-          <button class="btn btn-outline" type="button" id="c-copy"><svg class="s-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="8.5" y="8.5" width="12" height="12" rx="2.5"/><path d="M15.5 8.5V6a2.5 2.5 0 0 0-2.5-2.5H6A2.5 2.5 0 0 0 3.5 6v7A2.5 2.5 0 0 0 6 15.5h2.5"/></svg><span>نسخ نص الرسالة</span></button>
-        </div>
-        <div class="s-channels" id="c-channels"></div>
+      <div class="s-choices" id="cform">
+        <a class="s-choice" id="c-telegram" href="https://t.me/Dani_Math_1" target="_blank" rel="noopener">
+          <span class="fi tg"><svg class="s-ico" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" stroke="none"><path d="M21.5 4.5 3 11.6c-1.1.44-1.1 1.06-.2 1.34l4.75 1.48 1.84 5.63c.22.6.38.84.78.84.34 0 .5-.16.7-.36l1.86-1.8 4.06 3c.75.42 1.29.2 1.48-.7l2.68-12.6c.28-1.15-.42-1.66-1.45-1.23z"/></svg></span>
+          <span class="t"><b>تيليجرام</b><span>ينقلك مباشرة إلى حسابنا على تيليجرام</span></span>
+          <svg class="s-ico go" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6.5 8 12l6.5 5.5"/></svg>
+        </a>
+        <a class="s-choice" id="c-email" href="#" target="_blank" rel="noopener">
+          <span class="fi ml"><svg class="s-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></span>
+          <span class="t"><b>البريد الإلكتروني</b><span>يفتح لك جيميل في المتصفح لإرسال رسالة</span></span>
+          <svg class="s-ico go" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6.5 8 12l6.5 5.5"/></svg>
+        </a>
+      </div>
       </div>
     </div>
   </div>
@@ -2556,44 +2538,24 @@ var SITE_CONTACT = { email: "jonmcdonald975@gmail.com", whatsapp: "", telegram: 
 
   /* ---------- contact ---------- */
   var SUBJ = { question: "سؤال عن محتوى لوحة", suggest: "اقتراح موضوع لوحة جديدة", bug: "الإبلاغ عن خطأ رياضي", teach: "تعاون أو استخدام في التدريس" };
+  function gmailComposeUrl(subject, body) {
+    var url = "https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(SITE_CONTACT.email);
+    if (subject) url += "&su=" + encodeURIComponent(subject);
+    if (body) url += "&body=" + encodeURIComponent(body);
+    return url;
+  }
+  function telegramUrl(text) {
+    var url = "https://t.me/" + SITE_CONTACT.telegram.replace(/^@/, "");
+    return text ? url + "?text=" + encodeURIComponent(text) : url;
+  }
   function openContact(preset) {
     preset = preset || {};
-    if (preset.subject) $("#c-subj").value = preset.subject;
-    if (preset.poster !== undefined) $("#c-poster").value = preset.poster;
-    if (preset.body && !$("#c-msg").value) $("#c-msg").value = preset.body;
-    $("#c-warn").classList.remove("show");
+    var subject = "", pi = preset.poster !== undefined ? indexOf(preset.poster) : -1;
+    if (preset.subject) subject = "Algebra with Dani | " + (SUBJ[preset.subject] || preset.subject) + (pi >= 0 ? " — " + POSTERS[pi].title : "");
+    var body = preset.body || "";
+    $("#c-telegram").href = telegramUrl(subject && body ? subject + "\n\n" + body : (subject || body));
+    $("#c-email").href = gmailComposeUrl(subject, body);
     openModal("m-contact");
-  }
-  function composeMessage() {
-    var subj = SUBJ[$("#c-subj").value], pid = $("#c-poster").value, pi = indexOf(pid);
-    var title = "Algebra with Dani | " + subj + (pi >= 0 ? " — " + POSTERS[pi].title : "");
-    var body = $("#c-msg").value.trim();
-    var sig = [];
-    if ($("#c-name").value.trim()) sig.push("الاسم: " + $("#c-name").value.trim());
-    if ($("#c-mail").value.trim()) sig.push("البريد للرد: " + $("#c-mail").value.trim());
-    return { subject: title, body: body + (sig.length ? "\n\n—\n" + sig.join("\n") : "") };
-  }
-  function renderChannels() {
-    var box = $("#c-channels"), html = "";
-    if (SITE_CONTACT.email) html += '<span class="s-mailto">أو راسلنا مباشرة على: <a dir="ltr" href="mailto:' + SITE_CONTACT.email + '">' + SITE_CONTACT.email + '</a></span>';
-    if (SITE_CONTACT.whatsapp) html += '<a class="btn btn-outline btn-sm" target="_blank" rel="noopener" href="https://wa.me/' + SITE_CONTACT.whatsapp.replace(/\D/g, "") + '">واتساب</a>';
-    if (SITE_CONTACT.telegram) html += '<a class="btn btn-outline btn-sm" target="_blank" rel="noopener" href="https://t.me/' + SITE_CONTACT.telegram.replace(/^@/, "") + '">تيليجرام</a>';
-    if (SITE_CONTACT.youtube) html += '<a class="btn btn-outline btn-sm" target="_blank" rel="noopener" href="' + SITE_CONTACT.youtube + '">يوتيوب</a>';
-    box.innerHTML = html;
-  }
-  function sendMessage() {
-    var m = composeMessage(), warn = $("#c-warn");
-    if (!m.body || !$("#c-msg").value.trim()) { warn.textContent = "اكتب نص الرسالة أولاً."; warn.classList.add("show"); $("#c-msg").focus(); return; }
-    if (SITE_CONTACT.email) {
-      location.href = "mailto:" + SITE_CONTACT.email + "?subject=" + encodeURIComponent(m.subject) + "&body=" + encodeURIComponent(m.body);
-      warn.classList.remove("show");
-    } else if (SITE_CONTACT.whatsapp) {
-      window.open("https://wa.me/" + SITE_CONTACT.whatsapp.replace(/\D/g, "") + "?text=" + encodeURIComponent(m.subject + "\n\n" + m.body), "_blank", "noopener");
-    } else {
-      copyText(m.subject + "\n\n" + m.body, "نُسخ نص الرسالة");
-      warn.textContent = "لم تُضبط بعدُ وسيلة تواصل للمنصة، لذا نُسخ نص رسالتك لتلصقه في وسيلة التواصل التي تفضّلها.";
-      warn.classList.add("show");
-    }
   }
 
   /* ---------- glossary ---------- */
@@ -2689,11 +2651,6 @@ var SITE_CONTACT = { email: "jonmcdonald975@gmail.com", whatsapp: "", telegram: 
   });
   $("#dl-current").addEventListener("click", function () { download(POSTERS[current].id); });
   $("#burger").addEventListener("click", openDrawer);
-  $("#c-send").addEventListener("click", sendMessage);
-  $("#c-copy").addEventListener("click", function () {
-    var m = composeMessage(); if (!$("#c-msg").value.trim()) { $("#c-msg").focus(); return; }
-    copyText(m.subject + "\n\n" + m.body, "نُسخ نص الرسالة");
-  });
   $("#q").addEventListener("input", function () { renderGloss(this.value); });
   $("#toTop").addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
 
@@ -2727,7 +2684,7 @@ var SITE_CONTACT = { email: "jonmcdonald975@gmail.com", whatsapp: "", telegram: 
 
   /* init */
   $("#yr").textContent = new Date().getFullYear();
-  renderGloss(""); renderChannels(); buildThumbs();
+  renderGloss(""); buildThumbs();
   var start = indexOf(location.hash.slice(1));
   show(start >= 0 ? start : 0, { hash: start >= 0 });
   if (start >= 0) setTimeout(function () { $("#viewer").scrollIntoView({ block: "start" }); }, 60);
